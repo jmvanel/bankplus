@@ -17,6 +17,7 @@ object CompteVersTimeline {
         comment = op.montant + "\n" + op.libelle,
         size = op.montant/moyenne.toFloat
         )
+      events = event :: events
     }
     new TimeLineData(events)
   }

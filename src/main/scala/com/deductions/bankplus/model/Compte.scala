@@ -10,15 +10,20 @@ case class Compte (operations:List[Operation], numero:String="") {
       for (op <- operations) {
         moyenne += op.montant
       }
+    println( "moyenne " + moyenne + " " + operations.size)
     moyenne / operations.size
   }
 }
 
 object Compte {
-  val compteCourant = compteBidon
-  val compteBidon = new Compte(List(
-      new Operation(123, true, "EDF", "abonnement", new Date() ),
-      new Operation(123, true, "FNAC", "", 
+  lazy val compteCourant = compteBidon
+  lazy val compteBidon = new Compte(List(
+      new Operation(123, false, "EDF", "abonnement", new Date() ),
+      new Operation( 62, false, "FNAC", "", 
         new GregorianCalendar( 114 + 1900, 01, 01, 13, 33).getTime()
-      ) ) )
+      ),
+      new Operation( 65, false, "RATP", "", 
+        new GregorianCalendar( 114 + 1900, 01, 01, 13, 33).getTime()
+      )
+      ) )
 }

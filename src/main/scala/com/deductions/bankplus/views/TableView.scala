@@ -7,6 +7,7 @@ object TableView {
   def html(compte: Compte) = {
     <table border="1">
       {
+//    val test = // List[scala.xml.Elem]
         compte.operations.map { op =>
           <tr>
             <td> { op.montant } </td>

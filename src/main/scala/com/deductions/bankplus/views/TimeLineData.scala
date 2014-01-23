@@ -15,4 +15,6 @@ case class Event(
   icon: Option[URL] = None,
   size: Float = 0.5f
 )
-{ require( size >0 && size < 1 ) }
+{ 
+//  require( size >= 0 && size <= 1 )
+  }
